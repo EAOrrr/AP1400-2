@@ -1,0 +1,14 @@
+# Target labels
+ googletest
+# Source files and their labels
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/CMakeFiles/googletest
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/CMakeFiles/googletest.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/CMakeFiles/googletest-complete.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule
+/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule

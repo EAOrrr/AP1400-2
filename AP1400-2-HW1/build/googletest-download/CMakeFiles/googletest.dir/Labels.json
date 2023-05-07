@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule"
+		},
+		{
+			"file" : "/mnt/d/practice/h_programming basis/AP1400-2/AP1400-2-HW1/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}
