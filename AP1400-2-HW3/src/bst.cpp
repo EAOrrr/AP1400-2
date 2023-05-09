@@ -158,26 +158,6 @@ BST::Node** BST::find_parrent(int value){
     std::function<Node**(Node*& node)> findParrentHelper = 
         [value, &findParrentHelper](Node*& node)->Node**{
         if(node == nullptr || node->value == value) return nullptr;
-        
-        // Node* next = nullptr;
-        // if(value < node->value){
-        //     next = node->left;
-        // }
-        // else{
-        //     next = node->right;
-        // }
-        // if(next == nullptr){
-        //     return nullptr;
-        // }
-        // if(next->value == value){
-        //     std::cout <<"return pointer: "<< &node << std::endl;
-        //     std::cout << "dereference: "<<node << std::endl;
-        //     std::cout << node->left->value << node->right->value << std::endl;
-        //     Node** return_value = new Node*{node};
-        //     std::cout << *node;
-        //     return return_value;
-        // }
-        // return findParrentHelper(next);
         if(value < node->value){
             if(node->left == nullptr) return nullptr;
             if(node->left->value == value) return &node;
@@ -192,12 +172,29 @@ BST::Node** BST::find_parrent(int value){
 BST::Node** BST::find_successor(int value){
     Node** node = find_node(value);
     if(node == nullptr) return nullptr;
-    std::function<Node**(Node*& node)> find_successor_helpter= [&find_successor_helpter](Node*& node)->Node**{
-        if(node == nullptr) return nullptr;
+    std::function<Node**(Node*& node)> find_max= [&find_max](Node*& node)->Node**{
         if(node->right == nullptr) return &node;
-        return find_successor_helpter(node->right);
+        return find_max(node->right);
     };
-    return find_successor_helpter((*node)->left);
+    std::function<Node**(Node*& node)> find_successor_helper = [&](Node*& node)->Node**{
+        if(node->left != nullptr) return find_max(node->left);
+        else{
+            Node** parent_p = find_parrent(node->value);
+            if(parent_p == nullptr) return nullptr;
+            Node* &parent = *parent_p;
+            if(parent->right != nullptr &&parent->right == node){
+                return parent_p;
+            }
+            else{
+                Node* temp = parent->left;
+                parent->left = nullptr;
+                Node** return_val = find_successor_helper(parent);
+                parent->left = temp;
+                return return_val;
+            }
+        }
+    };
+    return find_successor_helper(*node);
 }
 bool BST::delete_node(int value){
     Node ** deleteNode_p = find_node(value);
