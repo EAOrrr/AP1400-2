@@ -276,6 +276,7 @@ bool BST::delete_node(int value){
     return true;
 }
 BST& BST::operator=(const BST& another){
+    if(&another == this) return *this;
     // delete current nodes
     if(this == &another) return *this;
     std::vector<Node*> nodes;
@@ -294,6 +295,7 @@ BST& BST::operator=(const BST& another){
     return *this;
 }
 BST& BST::operator=(BST&& bst){
+    if(&bst == this) return *this;
     std::vector<Node*> nodes;
     bfs([&nodes](BST::Node*& node){nodes.push_back(node);});
     for(auto& node: nodes)
