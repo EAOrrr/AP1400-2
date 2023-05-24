@@ -113,31 +113,25 @@ size_t BST::length()const{
     bfs([&size](Node*&node){size += 1;});
     return size;
 }
+
 bool BST::add_node(int value){
     if(root == nullptr){
         root = new Node(value, nullptr, nullptr);
         return true;
     }
     std::function<bool(BST::Node*& node)> add_helper = [&add_helper, value](Node*& node){
-        if(node->value == value)
-            return false;
-        if(value < node->value){
-            if(node->left == nullptr){
-                node->left = new Node(value, nullptr, nullptr);
-                return true;
-            }
-            else{
-                return add_helper(node->left);
-            }
-        }
-        if(node->right == nullptr){
-            node->right = new Node(value, nullptr, nullptr);
+        if(node == nullptr){
+            node = new Node(value, nullptr, nullptr);
             return true;
         }
-        else{
+        else if(value < node->value){
+            return add_helper(node->left);
+        }
+        else if(node->value < value){
             return add_helper(node->right);
         }
-        
+        // assume node->value == value
+        return false;
     };
     return add_helper(root);
 }
