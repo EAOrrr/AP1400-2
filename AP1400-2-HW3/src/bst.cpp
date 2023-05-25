@@ -190,6 +190,7 @@ BST::Node** BST::find_successor(int value){
     };
     return find_successor_helper(*node);
 }
+/*
 bool BST::delete_node(int value){
     Node ** deleteNode_p = find_node(value);
     Node ** parent_p = find_parrent(value);
@@ -269,6 +270,35 @@ bool BST::delete_node(int value){
     }
     return true;
 }
+*/
+bool BST::delete_node(int value){
+    Node** toDeleteP = find_node(value);
+    if(toDeleteP == nullptr) return false;  // cannot find the node with given value
+    Node*& toDelete = *toDeleteP;
+    if(toDelete->left == nullptr && toDelete->right == nullptr){ // toDelete is leaf node
+        delete toDelete;
+        toDelete = nullptr;
+    }
+    else if(toDelete->left == nullptr){  // toDelete has only right child
+        Node* temp = toDelete;
+        toDelete = toDelete->right;
+        delete temp;
+    }
+    else if(toDelete ->right == nullptr){  // toDelete has only left child
+        Node* temp = toDelete;
+        toDelete = toDelete->left;
+        delete temp;
+    }
+    else{   // toDelete has both children
+        Node** successorP = find_successor(value);
+        Node* temp = *successorP;
+        (*successorP) = (*successorP)->left;
+        toDelete->value = temp->value;
+        delete temp;
+    }
+    return true;
+}
+
 BST& BST::operator=(const BST& another){
     if(&another == this) return *this;
     // delete current nodes
